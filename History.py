@@ -13,9 +13,9 @@ from urllib.parse import urlparse,parse_qs
 import pyperclip
 from Functions import  datestring_to_epoch,epoch_to_datetime,slice_dates_into_chunks,BuildDataFrame
 
-client_id='MRXTWL7TF2-100'
-secret_id='BQ68PJFMRK'
-url='google.com'
+client_id='' #Fill your client_id
+secret_id='' #Fill your secret_id
+url='' #Fill your url
 response_type="code"
 grant_type="authorization_code"
 session=fyersModel.SessionModel(client_id=client_id,
