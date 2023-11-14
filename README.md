@@ -1,8 +1,8 @@
-# Intraday Stocks Data for 1, 2, 5, 10, 15 minutes
+# Intraday Stocks Data 2017 onwards
 
 This code allows you to retrieve data for specific tickers. You can read the pickle file to obtain data for different timeframes such as 1, 2, 5, 10, and 15 minutes for both individual stocks and NIFTY/BANKNIFTY data. The code is flexible and can be extended to fetch data for any symbols of your choice.
 
-The data is stored in a pickle file, which is a dictionary containing keys in the format (timeframe, Stock).
+The data can be stored in a pickle file, which is a dictionary containing keys in the format (timeframe, Stock).
 
 ```python
 
