@@ -26,3 +26,26 @@ try:
     print(data_for_stock.head())
 except KeyError:
     print(f"No data found for {stock_symbol} with {selected_timeframe}-minute timeframe.")
+
+```
+
+To fetch any symbol from the SQLite DB use this function
+```python
+def get_dataframe(stockname, timeframe, conn):
+    # Use parameterized query to handle special characters in table name
+    table_name = f'"{stockname}_{timeframe}"'
+    query = f"SELECT Datetime, Close FROM {table_name}"
+    
+    # Specify the database connection in the function parameters
+    df = pd.read_sql_query(query, conn)
+    
+    # Convert 'Datetime' column to datetime type
+    df['Datetime'] = pd.to_datetime(df['Datetime'])
+    
+    # Set 'Datetime' as the index
+    #df.set_index('Datetime', inplace=True)
+    
+    # Rename 'Close' column to the stock name
+    df.rename(columns={'Close': stockname}, inplace=True)
+    
+    return df
